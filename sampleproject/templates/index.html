@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<!--{% for movie in movie_list %}-->
+<!--{{movie.id}}&#45;&#45;&ndash;&gt;{{movie.name}}<br>-->
+<!--{% endfor %}-->
+<!--{% for movie in movie_list %}-->
+<!--<a href="movies/{{movie.id}}/" >{{movie.id}}&#45;&#45;&ndash;&gt;{{movie.name}}<br>-->
+<!--{% endfor %}-->
+<!--Web APP- url setup-->
+<!--{% for movie in movie_list %}-->
+<!--<img src="{{movie.img.url}}" width="100" height="100">-->
+<!--<a href="{% url 'sampleapp:details' movie.id %}">{{movie.id}}&#45;&#45;&ndash;&gt;{{movie.name}}<br>-->
+<!--{% endfor %}-->
+
+
+<div class="container">
+    <div class="row">
+        {% for movie in movie_list %}
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{movie.img.url}}" style=height:400px;">
+              <div class="card-body">
+                <h5 class="card-title">{{movie.name}}</h5>
+<!--                <p class="card-text">{{movie.desc}}</p>-->
+                <a href="{% url 'sampleapp:details' movie.id %}" class="btn btn-primary">More details</a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
